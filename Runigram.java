@@ -7,7 +7,7 @@ public class Runigram {
 
 	public static void main(String[] args) {
 	    
-		//// Hide / change / add to the testing code below, as needed.
+		//// Hide / change  / add to the testing code below, as needed.
 		
 		// Tests the reading and printing of an image:	
 		Color[][] image = read("ironman.ppm");
@@ -30,7 +30,8 @@ public class Runigram {
 		//// Write here whatever code you need in order to test your work.
 		//// You can reuse / overide the contents of the imageOut array.
 	}
-/** Returns a 2D array of Color values, representing the image data
+
+	/** Returns a 2D array of Color values, representing the image data
 	 * stored in the given PPM file. */
 	public static Color[][] read(String fileName) {
 		In in = new In(fileName);
@@ -50,6 +51,7 @@ public class Runigram {
 				image[i][j] = (new Color(in.readInt(), in.readInt(), in.readInt()));
 		return image;
 	}
+
     // Prints the RGB values of a given color.
 	private static void print(Color c) {
 	    System.out.print("(");
@@ -58,6 +60,7 @@ public class Runigram {
         System.out.printf("%3s",  c.getBlue());  // Prints the blue component
         System.out.print(")  ");
 	}
+
 	// Prints the pixels of the given image.
 	// Each pixel is printed as a triplet of (r,g,b) values.
 	// This function is used for debugging purposes.
@@ -150,6 +153,7 @@ public class Runigram {
 				blendedImage[i][j] = blend(image1[i][j], image2[i][j], alpha);
 		return blendedImage;
 	}
+
 	/**
 	 * Morphs the source image into the target image, gradually, in n steps.
 	 * Animates the morphing process by displaying the morphed image in each step.
@@ -162,6 +166,7 @@ public class Runigram {
 			display(blend(source, scaledTarget, (double)(n-i)/n));
 			StdDraw.pause(500);
 		}
+
 	}
 	
 	/** Creates a canvas for the given image. */
@@ -176,6 +181,7 @@ public class Runigram {
 		// the StdDraw.show function is called.
 		StdDraw.enableDoubleBuffering();
 	}
+
 	/** Displays the given image on the current canvas. */
 	public static void display(Color[][] image) {
 		int height = image.length;
