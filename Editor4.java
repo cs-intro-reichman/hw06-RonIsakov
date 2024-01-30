@@ -6,7 +6,7 @@ public class Editor4 {
 		int n = Integer.parseInt(args[1]);
         //reading the image
 		Color[][] image = Runigram.read(fileName);
-        //creating an array witch is the image  grey
+        //creating an array witch is the image grey
 		Color[][] grey = Runigram.grayScaled(image);
         //setting canvas
         Runigram.setCanvas(image);
