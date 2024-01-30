@@ -43,7 +43,7 @@ public class Runigram {
 		Color[][] image = new Color[numRows][numCols];
 		// Reads the RGB values from the file, into the image array. 
 		// For each pixel (i,j), reads 3 values from the file,
-		// creates from the 3 colors a new Color object, and 
+		// creates from the 3 colors a new Color object, and s
 		// makes pixel (i,j) refer to that object.
 		for(int i=0 ; i<numRows ; i++)
 			for(int j=0 ; j<numCols ; j++)
