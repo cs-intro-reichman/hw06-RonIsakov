@@ -1,30 +1,19 @@
 import java.awt.Color;
 /** A library of image processing functions. */
 public class Runigram {
-	public static void main(String[] args) {
-	    
-		//// Hide / change / add to the testing code below, as needed.
-
-		// Tests the reading and printing of an image:	
+	public static void main(String[] args) {	
+		Color[][] image1 = read("ironman.ppm");
+		Color[][] image2 = read("thor.ppm");
+		setCanvas(image1);
+		int n = 10;
+		morph(image1,image2,n);
 		Color[][] image = read("ironman.ppm");
-		//print(tinypic);
-
-		// Creates an image which will be the result of various 
-		// image processing operations:
-		Color[][] imageOut;
-
-		// Tests the horizontal flipping of an image:
-		imageOut = flippedHorizontally(image);
-		//System.out.println();
-		//print(imageOut);
-		setCanvas(image);
-		display(image);
-		StdDraw.pause(3000);
-		display(imageOut);
-
-
-		//// Write here whatever code you need in order to test your work.
-		//// You can reuse / overide the contents of the imageOut array.
+        //creating an array witch is the image grey
+		Color[][] grey = grayScaled(image);
+        //setting canvas
+        setCanvas(image);
+        //morphing the images
+		morph(image, grey, n);
 	}
 	/** Returns a 2D array of Color values, representing the image data
 	 * stored in the given PPM file. */
@@ -71,22 +60,22 @@ public class Runigram {
 	 * Returns an image which is the horizontally flipped version of the given image. 
 	 */
 	public static Color[][] flippedHorizontally(Color[][] image) {
-		Color[][] fhImage = new Color[image.length][image[0].length];
+		Color[][] FHI = new Color[image.length][image[0].length];
 		for(int i=0 ; i<image.length ; i++)
 			for(int j=0 ; j<image[0].length ; j++)
-				fhImage[i][j] = image[i][image[0].length-1-j];
-		return fhImage;
+				FHI[i][j] = image[i][image[0].length-1-j];
+		return FHI;
 	}
 	
 	/**
 	 * Returns an image which is the vertically flipped version of the given image. 
 	 */
 	public static Color[][] flippedVertically(Color[][] image){
-		Color[][] fvImage = new Color[image.length][image[0].length];
+		Color[][] FVI = new Color[image.length][image[0].length];
 		for(int i=0 ; i<image.length ; i++)
 			for(int j=0 ; j<image[0].length ; j++)
-				fvImage[i][j] = image[image.length-1-i][j];
-		return fvImage;
+			FVI[i][j] = image[image.length-1-i][j];
+		return FVI;
 	}
 	
 	// Computes the luminance of the RGB values of the given pixel, using the formula 
@@ -153,9 +142,9 @@ public class Runigram {
 	 * of the source image.
 	 */
 	public static void morph(Color[][] source, Color[][] target, int n) {
-		Color[][] scaledTarget = scaled(target, source[0].length, source.length);
+		Color[][] ST = scaled(target, source[0].length, source.length);
 		for(int i=0 ; i<n ; i++) {
-			display(blend(source, scaledTarget, (double)(n-i)/n));
+			display(blend(source, ST, (double)(n-i)/n));
 			StdDraw.pause(500);
 		}
 	}
