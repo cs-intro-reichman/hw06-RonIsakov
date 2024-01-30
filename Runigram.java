@@ -4,6 +4,33 @@ import java.awt.Color;
 
 /** A library of image processing functions. */
 public class Runigram {
+
+	public static void main(String[] args) {
+	    
+		//// Hide / change / add to the testing code below, as needed.
+		
+		// Tests the reading and printing of an image:	
+		Color[][] image = read("ironman.ppm");
+		//print(tinypic);
+
+		// Creates an image which will be the result of various 
+		// image processing operations:
+		Color[][] imageOut;
+
+		// Tests the horizontal flipping of an image:
+		imageOut = flippedHorizontally(image);
+		//System.out.println();
+		//print(imageOut);
+		setCanvas(image);
+		display(image);
+		StdDraw.pause(3000);
+		display(imageOut);
+
+		
+		//// Write here whatever code you need in order to test your work.
+		//// You can reuse / overide the contents of the imageOut array.
+	}
+
 	/** Returns a 2D array of Color values, representing the image data
 	 * stored in the given PPM file. */
 	public static Color[][] read(String fileName) {
