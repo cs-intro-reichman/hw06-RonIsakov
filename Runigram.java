@@ -1,19 +1,34 @@
 import java.awt.Color;
 /** A library of image processing functions. */
 public class Runigram {
-	public static void main(String[] args) {	
+	public static void main(String[] args) {
+		//testing morph	
 		Color[][] image1 = read("ironman.ppm");
 		Color[][] image2 = read("thor.ppm");
 		setCanvas(image1);
 		int n = 10;
 		morph(image1,image2,n);
 		Color[][] image = read("ironman.ppm");
+		//testing editor 4
         //creating an array witch is the image grey
 		Color[][] grey = grayScaled(image);
         //setting canvas
         setCanvas(image);
         //morphing the images
 		morph(image, grey, n);
+		//testing print and read
+		image = read("tinypic.ppm");
+		print(image);
+		System.out.println();
+		//testing flippedHorizontally
+		print(flippedHorizontally(image));
+		// testing flippedVertically
+		System.out.println();
+		print(flippedVertically(image));
+		System.out.println();
+		////testing Scaling
+		print(scaled(image,3,5));
+		System.out.println();
 	}
 	/** Returns a 2D array of Color values, representing the image data
 	 * stored in the given PPM file. */
