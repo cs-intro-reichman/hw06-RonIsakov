@@ -23,7 +23,7 @@ public class Runigram {
 		//print(imageOut);
 		//setCanvas(image1);
 		//morph(image1,image2,5);
-		
+		//s
 		//// Write here whatever code you need in order to test your work.
 		//// You can reuse / overide the contents of the imageOut array.
 	}
