@@ -23,7 +23,7 @@ public class Runigram {
 		//print(imageOut);
 		//setCanvas(image);
 		//display(image);
-		StdDraw.pause(3000);
+		//StdDraw.pause(3000);
 		//display(imageOut);
 
 		
