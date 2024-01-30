@@ -7,7 +7,7 @@ public class Runigram {
 
 	public static void main(String[] args) {
 	    
-		//// Hide / change / add to the testing code below, as needed.
+		//// Hide /c change / add to the testing code below, as needed.
 		
 		// Tests the reading and printing of an image:	
 		Color[][] image = read("ironman.ppm");
