@@ -6,9 +6,10 @@ public class Runigram {
 		Color[][] image1 = read("ironman.ppm");
 		Color[][] image2 = read("thor.ppm");
 		setCanvas(image1);
-		int n = 10;
+		int n = 5;
 		morph(image1,image2,n);
-		Color[][] image = read("ironman.ppm");
+		StdDraw.pause(500);
+		Color[][] image = read("eyes.ppm");
 		//testing editor 4
         //creating an array witch is the image grey
 		Color[][] grey = grayScaled(image);
@@ -39,15 +40,21 @@ public class Runigram {
 		int numCols = in.readInt();
 		int numRows = in.readInt();
 		in.readInt();
+
 		// Creates the image array
 		Color[][] image = new Color[numRows][numCols];
 		// Reads the RGB values from the file, into the image array. 
 		// For each pixel (i,j), reads 3 values from the file,
 		// creates from the 3 colors a new Color object, and s
 		// makes pixel (i,j) refer to that object.
-		for(int i=0 ; i<numRows ; i++)
-			for(int j=0 ; j<numCols ; j++)
-				image[i][j] = (new Color(in.readInt(), in.readInt(), in.readInt()));
+		for(int i=0 ; i<numRows ; i++){
+			for(int j=0 ; j<numCols ; j++){
+			int Red = in.readInt();
+			int Green =in.readInt();
+			int Blue =in.readInt();
+				image[i][j] = (new Color(Red, Green, Blue));
+			}
+		}
 		return image;
 	}
     // Prints the RGB values of a given color.
